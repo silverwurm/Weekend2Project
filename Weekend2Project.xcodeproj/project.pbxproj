@@ -15,6 +15,11 @@
 		04E14A4C1AE4385C0032AFE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04E14A4B1AE4385C0032AFE0 /* Images.xcassets */; };
 		04E14A4F1AE4385C0032AFE0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E14A4D1AE4385C0032AFE0 /* LaunchScreen.xib */; };
 		04E14A5B1AE4385D0032AFE0 /* Weekend2ProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E14A5A1AE4385D0032AFE0 /* Weekend2ProjectTests.m */; };
+		04E14A661AE438CD0032AFE0 /* WebServicesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E14A651AE438CD0032AFE0 /* WebServicesHandler.m */; };
+		04E14A681AE45D6C0032AFE0 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 04E14A671AE45D6C0032AFE0 /* libsqlite3.dylib */; };
+		04E14A6B1AE45DC10032AFE0 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E14A6A1AE45DC10032AFE0 /* DatabaseManager.m */; };
+		04E14A6E1AE4FC190032AFE0 /* NewsStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E14A6D1AE4FC190032AFE0 /* NewsStory.m */; };
+		04E14A711AE51D0C0032AFE0 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E14A701AE51D0C0032AFE0 /* WebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,15 @@
 		04E14A541AE4385D0032AFE0 /* Weekend2ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Weekend2ProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04E14A591AE4385D0032AFE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E14A5A1AE4385D0032AFE0 /* Weekend2ProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Weekend2ProjectTests.m; sourceTree = "<group>"; };
+		04E14A641AE438CD0032AFE0 /* WebServicesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebServicesHandler.h; path = ../WebServicesHandler.h; sourceTree = "<group>"; };
+		04E14A651AE438CD0032AFE0 /* WebServicesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebServicesHandler.m; path = ../WebServicesHandler.m; sourceTree = "<group>"; };
+		04E14A671AE45D6C0032AFE0 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		04E14A691AE45DC10032AFE0 /* DatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseManager.h; sourceTree = "<group>"; };
+		04E14A6A1AE45DC10032AFE0 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
+		04E14A6C1AE4FC190032AFE0 /* NewsStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsStory.h; sourceTree = "<group>"; };
+		04E14A6D1AE4FC190032AFE0 /* NewsStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsStory.m; sourceTree = "<group>"; };
+		04E14A6F1AE51D0C0032AFE0 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		04E14A701AE51D0C0032AFE0 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E14A681AE45D6C0032AFE0 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +80,7 @@
 		04E14A2F1AE4385C0032AFE0 = {
 			isa = PBXGroup;
 			children = (
+				04E14A671AE45D6C0032AFE0 /* libsqlite3.dylib */,
 				04E14A3A1AE4385C0032AFE0 /* Weekend2Project */,
 				04E14A571AE4385D0032AFE0 /* Weekend2ProjectTests */,
 				04E14A391AE4385C0032AFE0 /* Products */,
@@ -83,11 +99,19 @@
 		04E14A3A1AE4385C0032AFE0 /* Weekend2Project */ = {
 			isa = PBXGroup;
 			children = (
+				04E14A641AE438CD0032AFE0 /* WebServicesHandler.h */,
+				04E14A651AE438CD0032AFE0 /* WebServicesHandler.m */,
 				04E14A3F1AE4385C0032AFE0 /* AppDelegate.h */,
 				04E14A401AE4385C0032AFE0 /* AppDelegate.m */,
 				04E14A451AE4385C0032AFE0 /* ViewController.h */,
 				04E14A461AE4385C0032AFE0 /* ViewController.m */,
+				04E14A6C1AE4FC190032AFE0 /* NewsStory.h */,
+				04E14A6D1AE4FC190032AFE0 /* NewsStory.m */,
+				04E14A691AE45DC10032AFE0 /* DatabaseManager.h */,
+				04E14A6A1AE45DC10032AFE0 /* DatabaseManager.m */,
 				04E14A481AE4385C0032AFE0 /* Main.storyboard */,
+				04E14A6F1AE51D0C0032AFE0 /* WebViewController.h */,
+				04E14A701AE51D0C0032AFE0 /* WebViewController.m */,
 				04E14A4B1AE4385C0032AFE0 /* Images.xcassets */,
 				04E14A4D1AE4385C0032AFE0 /* LaunchScreen.xib */,
 				04E14A421AE4385C0032AFE0 /* Weekend2Project.xcdatamodeld */,
@@ -225,6 +249,10 @@
 				04E14A411AE4385C0032AFE0 /* AppDelegate.m in Sources */,
 				04E14A3E1AE4385C0032AFE0 /* main.m in Sources */,
 				04E14A471AE4385C0032AFE0 /* ViewController.m in Sources */,
+				04E14A711AE51D0C0032AFE0 /* WebViewController.m in Sources */,
+				04E14A6E1AE4FC190032AFE0 /* NewsStory.m in Sources */,
+				04E14A661AE438CD0032AFE0 /* WebServicesHandler.m in Sources */,
+				04E14A6B1AE45DC10032AFE0 /* DatabaseManager.m in Sources */,
 				04E14A441AE4385C0032AFE0 /* Weekend2Project.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +448,7 @@
 				04E14A601AE4385D0032AFE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04E14A611AE4385D0032AFE0 /* Build configuration list for PBXNativeTarget "Weekend2ProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +457,7 @@
 				04E14A631AE4385D0032AFE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

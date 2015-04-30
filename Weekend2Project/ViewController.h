@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WebServicesHandler.h"
+#import "DatabaseManager.h"
+#import "NewsStory.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<WebServicesHandlerDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *TableView;
 
 
 @end

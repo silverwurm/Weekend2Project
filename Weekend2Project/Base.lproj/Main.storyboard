@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,101 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rAF-TI-k9B">
+                                <rect key="frame" x="16" y="76" width="568" height="516"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="516" id="ZvX-fP-uJx"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Quu-RT-UPx">
+                                        <rect key="frame" x="0.0" y="0.0" width="568" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Quu-RT-UPx" id="VNk-FV-8Zr">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="miO-sY-2og"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="9Gc-e0-Mby"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Top News Stories" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yk5-Sj-vPD">
+                                <rect key="frame" x="16" y="28" width="568" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="rAF-TI-k9B" firstAttribute="trailing" secondItem="yk5-Sj-vPD" secondAttribute="trailing" id="0F6-Vq-UZn"/>
+                            <constraint firstItem="rAF-TI-k9B" firstAttribute="leading" secondItem="yk5-Sj-vPD" secondAttribute="leading" id="BUN-od-XCp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rAF-TI-k9B" secondAttribute="bottom" constant="8" symbolic="YES" id="Um9-yo-48L"/>
+                            <constraint firstItem="rAF-TI-k9B" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="aDq-DR-1yZ"/>
+                            <constraint firstItem="rAF-TI-k9B" firstAttribute="top" secondItem="yk5-Sj-vPD" secondAttribute="bottom" constant="8" symbolic="YES" id="qFC-Kg-eNz"/>
+                            <constraint firstItem="rAF-TI-k9B" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="zx1-Xg-ifL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TableView" destination="rAF-TI-k9B" id="Niz-Ls-12x"/>
+                        <segue destination="xaw-jv-e16" kind="show" identifier="ToWebView" id="Xbi-u3-ELt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="458" y="112"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="bta-PN-PYo">
+            <objects>
+                <viewController id="xaw-jv-e16" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PPv-Q3-xKT"/>
+                        <viewControllerLayoutGuide type="bottom" id="fhC-Qi-RPa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="i94-O6-bUd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LUl-Db-QKd">
+                                <rect key="frame" x="0.0" y="48" width="600" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xaw-jv-e16" id="pIK-Pq-yEU"/>
+                                </connections>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Y2-YY-ACG">
+                                <rect key="frame" x="16" y="20" width="35" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="GoBack:" destination="xaw-jv-e16" eventType="touchUpInside" id="6Yr-vC-YoL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Y2-YY-ACG" firstAttribute="top" secondItem="PPv-Q3-xKT" secondAttribute="bottom" id="M54-7m-DJs"/>
+                            <constraint firstItem="LUl-Db-QKd" firstAttribute="bottom" secondItem="fhC-Qi-RPa" secondAttribute="top" id="Nam-IQ-ibD"/>
+                            <constraint firstItem="1Y2-YY-ACG" firstAttribute="leading" secondItem="i94-O6-bUd" secondAttribute="leadingMargin" id="Xb8-rl-emQ"/>
+                            <constraint firstItem="LUl-Db-QKd" firstAttribute="leading" secondItem="i94-O6-bUd" secondAttribute="leading" id="fp1-3J-KTj"/>
+                            <constraint firstAttribute="trailing" secondItem="LUl-Db-QKd" secondAttribute="trailing" id="mTQ-NK-fcX"/>
+                            <constraint firstItem="LUl-Db-QKd" firstAttribute="top" secondItem="PPv-Q3-xKT" secondAttribute="bottom" constant="28" id="uut-V5-9FK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="WebView" destination="LUl-Db-QKd" id="DQD-qP-so9"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" identifier="BackToTable" id="UBo-en-K1M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hdi-Nw-46E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1195" y="84"/>
         </scene>
     </scenes>
 </document>
